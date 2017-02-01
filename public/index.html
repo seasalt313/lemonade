@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lemonade Stand</title>
+    <!-- add css file -->
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
+    <script src="https://use.fontawesome.com/7fb1b7bdac.js"></script>
+  </head>
+  <body ng-app="LemonadeStandApp">
+    <h1>
+      <i class="fa fa-lemon-o" aria-hidden="true"></i>
+      Lemonade Stand
+      <i class="fa fa-lemon-o" aria-hidden="true"></i>
+    </h1>
+
+    <section id="dsa" ng-controller="DisplayStandController">
+      <div class="inventory">
+        <p>Sugar: {{ ingredients.sugar }}</p>
+        <p>Ice: {{ ingredients.ice }}</p>
+        <p>Lemons: {{ ingredients.lemons }}</p>
+        <p>Cups: {{ ingredients.cups }}</p>
+
+      </div>
+      <div class="recipe">
+        <input type="number" placeholder="Amount of sugar" ng-model='sugarAmount'>
+        <button id="add" type="button" ng-click='reduceSugar(sugarAmount)'>Add to Pitcher</button>
+        <button id="add" type="button" ng-click="buyMore(sugarAmount, 'sugar')">Buy More</button>
+
+
+        <input type="number" placeholder="Amount of Ice" ng-model='iceAmount'>
+        <button id="add" type="button" ng-click='reduceIce(iceAmount)'>Add to Pitcher</button>
+        <button id="add" type="button" ng-click="buyMore(iceAmount, 'ice')">Buy More</button>
+
+
+        <input type="number" placeholder="Amount of Lemons" ng-model='lemonAmount'>
+        <button id="add" type="button" ng-click='reduceLemons(lemonAmount)'>Add to Pitcher</button>
+        <button id="add" type="button" ng-click="buyMore(lemonAmount, 'lemons')">Buy More</button>
+      </div>
+    </section>
+
+    <section id="sa" ng-controller="StoreController">
+
+      <p>Money: ${{ prices.money }}</p>
+      <p>Customers: {{ store.customers }}</p>
+      <p>Weather : {{ store.weather }}</p>
+      <section>
+        <button id="end" ng-click="endDay(store.weather)">End Day</button>
+      </section>
+    </section>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <!-- add js file -->
+    <script src="app.js" type="text/javascript">
+    </script>
+  </body>
+</html>

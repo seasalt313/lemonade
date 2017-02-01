@@ -1,0 +1,79 @@
+// include foundation
+
+@import "../node_modules/foundation-sites/scss/foundation";
+
+@include foundation-global-styles;
+@include foundation-grid;
+
+html {
+  background-image: url('http://emmaolliff.com/wp-content/uploads/2015/03/Lemon-Slices.jpg');
+}
+
+body {
+  background-color: #FFFDD0;
+  border: 2px solid #2E8B57;
+  padding: 20px;
+  margin: 50px;
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 19px;
+
+  h1 {
+    text-align: center;
+    color: #2E8B57;
+  }
+
+
+  #dsa {
+    @include grid-row();
+    border: 2px solid #2E8B57;
+    margin: 20px;
+    padding: 40px;
+    .inventory {
+      @include grid-column(4);
+    }
+    .recipe {
+      @include grid-column(8);
+      input {
+        border: 1px solid #2E8B57;
+        padding: 10px;
+        border-radius: 4px;
+        font-family: 'Shadows Into Light Two', cursive;
+        margin: 10px;
+      }
+    #add {
+      border: 1px solid #2E8B57;
+      color: #2E8B57;
+      background-color: white;
+      padding: 10px;
+      border-radius: 4px;
+      font-family: 'Shadows Into Light Two', cursive;
+      margin: 10px;
+      box-shadow: 3px 3px 5px #8FBC8F;
+      }
+    }
+  }
+
+  #sa {
+    border: 2px solid #2E8B57;
+    margin: 20px;
+    padding: 40px;
+  }
+
+  #end  {
+    border: 6px solid white;
+    color: white;
+    background-color: #2E8B57;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 22px;
+    font-family: 'Shadows Into Light Two', cursive;
+    box-shadow: 4px 4px 4px #8FBC8F;
+  }
+
+  #end:hover{
+    border: 6px solid #2E8B57;
+    color: #2E8B57;
+    background-color: #FFFDD0;
+  }
+
+}
