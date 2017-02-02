@@ -31,14 +31,14 @@ app.controller("DisplayStandController", function($scope, LemonadeFactory){
 app.controller("StoreController", function($scope, StandFactory, LemonadeFactory){
 
 
-
   $scope.store = StandFactory.getStats();
   $scope.prices = LemonadeFactory.getPrices();
   $scope.endDay = function(){
   let weather =  StandFactory.weatherToday();
   let results = StandFactory.businessSuccess(weather);
   let prices = LemonadeFactory.moneyMade(results);
-  let lost = LemonadeFactory.youLost(prices)
+  let inventory = LemonadeFactory.getLemonade();
+  let lost = LemonadeFactory.youLost(prices);
 
   }
 
@@ -101,7 +101,7 @@ app.factory("LemonadeFactory", function(){
     },
     youLost: function(result){
       console.log(result.money);
-      if (result.money === 0) {
+      if (result.money <= 0) {
         console.log("you lost");
         alert("You Lost. Refresh to play again.")
       }
